@@ -1,4 +1,15 @@
 
+# ------------------------------- Test Function ---------------------------------
+# Input:
+# filename - the file containing test data where each row is an instance and
+#            the last column is the label
+# numPerLabel - the number of the initially labeled instance for each class 
+#               as the ground truth data
+# Output:
+# the performance of LabelForest measured by the average precision, recall, f1 on 
+# class labels and the overall labeling accuracy
+# -------------------------------------------------------------------------------
+
 testCase <- function(filename, numPerLabel){
   dat <- read.csv(filename)
   dat <- apply(dat, 2, as.numeric)
@@ -8,6 +19,7 @@ testCase <- function(filename, numPerLabel){
   unlabeled <- dat[-qid,]
   
   lv <- LabelForest(groundTruth, unlabeled)
+  ans <- c()
   if(length(lv) == 0){
     print("No data sample been labeled")
   }
@@ -15,12 +27,13 @@ testCase <- function(filename, numPerLabel){
     y.estimate <- lv[,1]
     y.truth <- unlabeled[lv[,2],ncol(unlabeled)]
     ans <- labelAccuracy(y.truth, y.estimate)
-    print(data.frame(f1_per_class = ans[3], labeling_accuracy = ans[4]))
+    print(data.frame(Precision = ans[1], Recall = ans[2], F1 = ans[3], Labeling_accuracy = ans[4]))
   }
   else{
     ans <- sum(lv[1] == unlabeled[lv[2],ncol(unlabeled)])
     print(sprintf("Only 1 sample been labeled with an accuracy of %d", ans))
   }
+  return(ans)
 }
 
 
