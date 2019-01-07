@@ -12,6 +12,7 @@ Sample data is from a publicly available dataset of 6 activities \[1\], and a la
 
 ## Citation 
 If you will use this algorithm or the code, please cite the following paper:
+
 @inproceedings{labelforest, 
 title={LabelForest: Non-Parametric Semi-Supervised Learning for Activity Recognition}, 
 author={Ma, Yuchao and Ghasemzadeh, Hassan}, 
