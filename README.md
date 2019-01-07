@@ -10,6 +10,14 @@ Test output: precision, recall and F1 score averaging over all the classes, as w
 
 Sample data is from a publicly available dataset of 6 activities \[1\], and a laboratory dataset gathered by our research group for 12 activities \[2\].
 
+## Citation 
+If you will use this algorithm or the code, please cite the following paper:
+@inproceedings{labelforest, 
+title={LabelForest: Non-Parametric Semi-Supervised Learning for Activity Recognition}, 
+author={Ma, Yuchao and Ghasemzadeh, Hassan}, 
+booktitle={The Thirty-Third AAAI Conference on Artificial Intelligence (AAAI'19)},
+year={2019}, 
+} 
 
 ## Reference
 \[1\] Jorge-L. Reyes-Ortiz, Luca Oneto, Albert Samà, Xavier Parra, and Davide Anguita. 2016. Transition-Aware Human Activity Recognition Using Smartphones. Neurocomput. 171, C (Jan. 2016), 754–767. https://doi.org/10.1016/j.neucom.2015.07.085
